@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(secure_params)
     if @transaction.valid?
-      # TODO save data
+      @transaction.update_spreadsheet
       # TODO send message
       flash[:notice] = "New Transaction submitted by #{@transaction.name}."
       redirect_to root_path

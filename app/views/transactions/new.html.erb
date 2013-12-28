@@ -1,0 +1,12 @@
+<% content_for :title do %>Transaction<% end %>
+<h3>Transaction</h3>
+<div class="form">
+  <%= simple_form_for @transaction do |form| %>
+    <%= form.error_notification %>
+    <%= form.input :name, autofocus: true %>
+    <%= form.input :date %>
+    <%= form.input :vendor, as: :text %>
+    <%= form.input :amount, as: :number %>
+    <%= form.button :submit, 'Submit', class: 'submit' %>
+  <% end %>
+</div>

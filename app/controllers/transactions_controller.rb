@@ -9,8 +9,8 @@ class TransactionsController < ApplicationController
     if @transaction.valid?
       @transaction.update_spreadsheet
       # TODO send message
-      flash[:notice] = "New Transaction submitted by #{@transaction.name}."
-      redirect_to root_path
+      flash[:notice] = "New Transaction submitted for #{@transaction.name}."
+      render :new
     else
       render :new
     end
